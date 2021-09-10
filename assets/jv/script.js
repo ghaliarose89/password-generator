@@ -12,18 +12,55 @@ function Random (min, max) {
  return x;
   };
 
+function numbers(){
+    var i=Random(1,10 );
+    psgenerater = psgenerater.concat(i);
+};  
+
 function uperChar(){
-    var i=Random(65,90);
-    var str1= String.fromCharCode(i); 
-    psgenerater.concat(str1);
-  };
+  var i=Random(65,90);
+  var str1= String.fromCharCode(i); 
+  psgenerater = psgenerater.concat(str1);
+};
+  
+
+function lowCasechar(){
+  var i=Random(97,122 );
+  var str1= String.fromCharCode(i); 
+  psgenerater = psgenerater.concat(str1);
+};
+
+function specialchar(){
+  var i=Random(91,96 );
+  var str1= String.fromCharCode(i); 
+  psgenerater = psgenerater.concat(str1);
+};
   
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword(){
+  for (var i = 0 ; i <= passwordLength ; i ++){
 
-}
+   if (numeric){ 
+     numbers();
+    }
+   if (upperCasevar){
+    uperChar();
+   }
+   if (lowCase){
+    lowCasechar();
+   }
+   if (spicalChar){
+    specialchar();
+   }
+  
+  }
+  var passwordText = document.querySelector("#password");
+  passwordText.value = psgenerater;
+  console.log(psgenerater);
+  console.log(psgenerater.length);
+};
 
 // Write password to the #password input
 function writePassword() {
