@@ -7,7 +7,7 @@ function generatePassword() {
     //ps lenght
     var passwordLength = Number(prompt("Welcome to password generator, Please choose how long your password would be? Choose a number between 8 and 128"));
     // checking if the length between 8 & 128
-    if (passwordLength > 128 || passwordLength < 8 ) {
+    if ((passwordLength > 128 || passwordLength < 8 ) ||  (Number.isNaN(passwordLength) )){
       alert ("Invalid number, Try again and enter a number between 8 and 128 ");
       return;
     }
@@ -15,7 +15,7 @@ function generatePassword() {
     var numeric = confirm ("Do you want your password to have numbers?");
     var upperCasevar = confirm ("Do you want your password to have uppercase?");
     var lowCase = confirm ("Do you want your password to have lowercase characters?");
-    var spicalChar = confirm ("Do you want your password to have spical characters?");
+    var spicalChar = confirm ("Do you want your password to have special characters?");
     // arrays to hold letters, numbers , special chars
     var customChar = ['!','@','#','%','&','*','`'];
     var lowercase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -50,7 +50,7 @@ function generatePassword() {
     for (var i = 0 ; i < passwordLength ; i ++){
     
       psgenerater = psgenerater + err [ Math.floor(Math.random()* (err.length - 1))];
-      console.log(psgenerater.length);
+    
     }
     
     return psgenerater;
