@@ -27,11 +27,43 @@ function generatePassword() {
     var psgenerater ="";
     var err = [];
 
-   
+    if (lowCase){
+      err = err.concat(lowercase);
+      
+    }
 
+    if (upperCasevar){
+      err = err.concat(uppercase);
+    }
+
+    if (spicalChar) {
+      err = err.concat(customChar);
+    }
+
+    if (numeric){
+      err=err.concat(numbers);
+    }
+    
+    for (var i = 0 ; i < passwordLength ; i ++){
+    
+      psgenerater = psgenerater + err [ Math.floor(Math.random()* err.length - 1)];
+      
+    }
+    
+    return psgenerater;
+  
+};
+
+
+
+   
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
