@@ -1,71 +1,33 @@
 // Assignment code here
-var passwordLength= prompt("welcome to pasword generatour, Please chooes how length your pw would be? , choose form 8 up to 128");
-console.log(passwordLength);
-var numeric= confirm("Do you want ur ps to have number?");
-var upperCasevar= confirm("Do you want ur ps to have uppercase?");
-var lowCase= confirm("Do you want ur ps to have lowercase?");
-var spicalChar= confirm("Do you want ur ps to have spical character?");
-var psgenerater=" ";
+ 
 
-function Random (min, max) { 
-  x= (Math.floor(Math.random() * (max - min + 1) + min));
- return x;
-  };
-
-function numbers(){
-    var i=Random(1,10 );
-    psgenerater = psgenerater.concat(i);
-};  
-
-function uperChar(){
-  var i=Random(65,90);
-  var str1= String.fromCharCode(i); 
-  psgenerater = psgenerater.concat(str1);
-};
-  
-
-function lowCasechar(){
-  var i=Random(97,122 );
-  var str1= String.fromCharCode(i); 
-  psgenerater = psgenerater.concat(str1);
-};
-
-function specialchar(){
-  var i=Random(91,96 );
-  var str1= String.fromCharCode(i); 
-  psgenerater = psgenerater.concat(str1);
-};
-  
-// Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-function generatePassword(){
-  for (var i = 0 ; i <= passwordLength ; i ++){
+function generatePassword() {
+    var passwordLength = Number(prompt("welcome to pasword generatour, Please chooes how length your pw would be? , choose form 8 up to 128"));
 
-   if (numeric){ 
-     numbers();
+    if (passwordLength > 128 || passwordLength < 8 ) {
+      alert ("invalid number ");
+      return;
     }
-   if (upperCasevar){
-    uperChar();
-   }
-   if (lowCase){
-    lowCasechar();
-   }
-   if (spicalChar){
-    specialchar();
-   }
-  
-  }
-  var passwordText = document.querySelector("#password");
-  passwordText.value = psgenerater;
-  console.log(psgenerater);
-  console.log(psgenerater.length);
-};
+    var numeric = confirm ("Do you want your password to have number?");
+    var upperCasevar = confirm ("Do you want your password to have uppercase?");
+    var lowCase = confirm ("Do you want your password to have lowercase characters?");
+    var spicalChar = confirm ("Do you want your password to have spical characters?");
+    var customChar = ['!','@','#','%','&','*','`'];
+    var lowercase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    var numbers= ['0','1','2','3','4','5','6','7','8','9'];
+    var uppercase = lowercase.join().toUpperCase().split("");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+    if (!numeric && !lowCase && !upperCasevar && !spicalChar){
+      alert("Please choose one character type ");
+      return;
+    }
+
+    var psgenerater ="";
+    var err = [];
+
+   
 
   passwordText.value = password;
 
