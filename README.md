@@ -11,8 +11,8 @@ Clicking on Generate a password would prompt and confirms the following:
 * Confirm if the password will have special characters.
 
 ## Instructions:
-If the user enter a number greater than 128 or smaller than 8, 
-alert will show and the user should start over again by clicking on Generate Password again like the following snip  
+If the user enters a number greater than 128 or smaller than 8, 
+the alert will show, and the user should start over again by clicking on *Generate Password* again like the following snip  
 ![ScreenShot](./assets/Capture.JPG) 
 
 
