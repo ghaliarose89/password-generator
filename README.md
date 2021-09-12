@@ -12,7 +12,7 @@ Clicking on Generate a password would prompt and confirms the following:
 
 ## Instructions:
 If the user enter a number greater than 128 or smaller than 8, 
-alert will show and the user should start over again by clicking on Generate Password again.  
+alert will show and the user should start over again by clicking on Generate Password again like the following snip  
 ![ScreenShot](./assets/Capture.JPG) 
 
 
