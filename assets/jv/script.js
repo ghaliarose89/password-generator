@@ -8,7 +8,7 @@ function generatePassword() {
     var passwordLength = Number(prompt("Welcome to password generator, Please choose how long your password would be? Choose a number between 8 and 128"));
     // checking if the length between 8 & 128
     if ((passwordLength > 128 || passwordLength < 8 ) ||  (Number.isNaN(passwordLength) )){
-      alert ("Invalid number, Try again and enter a number between 8 and 128 ");
+      alert ("Invalid , Try again and enter a number between 8 and 128 ");
       return;
     }
     // variables declarations for choosing chat type
